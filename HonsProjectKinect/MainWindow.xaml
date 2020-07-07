@@ -1,0 +1,43 @@
+﻿<Window x:Class="HonsProjectKinect.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="550" Width="1075" MinHeight="550" MinWidth="1075" 
+        ResizeMode="NoResize"
+        Closing="MainWindow_Closing" Loaded="MainWindow_Loaded" Background="#FFCBCBCB"
+        MouseDown="Window_MouseDown">
+    <Grid Margin="0,0,0,0">
+        <Viewbox HorizontalAlignment="Left" MinHeight="424" MaxWidth="512" Width="512" Margin="10,50,0,8.8">
+            <Grid>
+                <Image Source="{Binding ImageSourceDepth}" Stretch="UniformToFill" />
+                <Image Source="{Binding ImageSource}" Stretch="UniformToFill" />
+            </Grid>
+        </Viewbox>
+        <Viewbox HorizontalAlignment="Right" MinHeight="424" MinWidth="512" Width="512" Margin="0,50,10,8.8">
+            <Grid x:Name="segmentationView">
+                <Image Source="{Binding ImageSourceBodyIndex}" Stretch="UniformToFill" />
+            </Grid>
+        </Viewbox>
+        <Label Content="Kinect V2 Body Measurements" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.RowSpan="2" VerticalAlignment="Top" FontSize="18" Height="34" Width="251"/>
+        <Label Content="Craig Robertson" HorizontalAlignment="Left" Margin="950,482,0,0" VerticalAlignment="Top" FontSize="14" Height="29" Width="109"/>
+
+        <Label Content="Enter Maximum Height: " HorizontalAlignment="Left" Margin="830,9,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtBoxHeight" Height="23" Margin="967,10,26.8,0" TextWrapping="Wrap" Text="1.7" VerticalAlignment="Top" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <Label Content="Enter Maximum Width: " HorizontalAlignment="Left" Margin="830,40,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="txtBoxWidth" Height="23" Margin="967,40,26.8,0" TextWrapping="Wrap" Text="1.2" VerticalAlignment="Top" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <Label Content="m" HorizontalAlignment="Left" Margin="1038,9,0,0" VerticalAlignment="Top"/>
+        <Label Content="m" HorizontalAlignment="Left" Margin="1038,38,0,0" VerticalAlignment="Top"/>
+        
+        
+        <Label Content="Enter Minimum Height: " HorizontalAlignment="Left" Margin="595,9,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtBoxHeightMin" Height="23" Margin="733,10,260.8,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        
+        <Label Content="Enter Minimum Width: " HorizontalAlignment="Left" Margin="595,40,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="txtBoxWidthMin" Height="23" Margin="733,40,260.8,0" TextWrapping="Wrap" Text="0.25" VerticalAlignment="Top" TextAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        
+        <Label Content="m" HorizontalAlignment="Left" Margin="803,9,0,0" VerticalAlignment="Top"/>
+        <Label Content="m" HorizontalAlignment="Left" Margin="803,38,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
